@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/Hp/Downloads/TRUSTRAIL_Interactive_Analyst_Experience%20(3).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRUSTRAIL — Interactive Analyst Experience</title>
+<style>
+:root{
+  --bg:#0b1017; --panel:#111925; --panel2:#172131; --panel3:#0f1722;
+  --line:#2a3747; --text:#f2f6fb; --muted:#93a2b5; --faint:#5d6a7c;
+  --blue:#4d8dff; --blueSoft:#142b4c;
+  --teal:#37d0c0; --tealSoft:#102d2b;
+  --green:#4bdd88; --greenSoft:#123225;
+  --amber:#ffc25b; --amberSoft:#352713;
+  --red:#ff6978; --redSoft:#351a22;
+  --purple:#b184ff; --purpleSoft:#24193a;
+  --navy:#12213a;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+.app{height:100vh;display:grid;grid-template-columns:190px 1fr;grid-template-rows:66px 1fr}
+header{grid-column:1/3;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 28px;gap:13px}
+.logo{font-size:18px;font-weight:850;letter-spacing:.2px}.mark{font-size:24px;color:var(--blue)}
+nav{display:flex;gap:5px;margin-left:55px}
+nav button{border:0;background:transparent;color:var(--muted);font:700 12px inherit;padding:11px 17px;border-radius:10px;cursor:pointer}
+nav button.active{background:#172b48;color:var(--blue)}
+.search{margin-left:auto;width:180px;border:1px solid var(--line);background:#0b121b;color:var(--muted);padding:9px 14px;border-radius:18px;outline:none}
+aside{background:var(--panel2);border-right:1px solid var(--line);padding:18px 16px}
+.side{padding:11px 13px;border-radius:9px;color:var(--muted);font-size:12px;margin:4px 0}.side.active{background:#172b48;color:var(--text);font-weight:750}
+main{min-height:0;padding:22px 30px 18px;overflow:hidden;position:relative}
+section{height:100%;min-height:0;position:relative;padding-bottom:54px;overflow:hidden}
+.kicker{font-size:10px;letter-spacing:1.1px;font-weight:850;color:var(--blue);margin-bottom:4px}
+h1{font-size:28px;line-height:1.1;margin:0 0 5px;letter-spacing:-.3px}.sub{font-size:12px;color:var(--muted);margin-bottom:15px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.panel h3{font-size:14px;margin:0}.small{font-size:10px;color:var(--muted);margin-top:3px}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 12px}.pill{font-size:9px;padding:6px 10px;border-radius:999px;font-weight:850;letter-spacing:.15px}
+.red{background:var(--redSoft);color:var(--red)}.purple{background:var(--purpleSoft);color:var(--purple)}.blue{background:var(--blueSoft);color:var(--blue)}
+.green{background:var(--greenSoft);color:var(--green)}.amber{background:var(--amberSoft);color:var(--amber)}.teal{background:var(--tealSoft);color:var(--teal)}
+.call{font-size:14px;line-height:1.42;font-weight:620}.muted{color:var(--muted)}
+.cta{margin-top:13px;border:1px solid #8d2f3d;border-radius:10px;padding:12px 18px;background:var(--redSoft);color:var(--red);font-weight:900;cursor:pointer}
+.guide{margin-left:11px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.2px}
+.landscape{height:180px;margin-top:13px;display:grid;grid-template-columns:1fr 150px 1fr;grid-template-rows:1fr 1fr;gap:10px;align-items:center}
+.src{height:66px;border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:11px 12px;position:relative}
+.src b{display:block;font-size:11px}.src span{font-size:9px;color:var(--muted)}
+.src i{position:absolute;right:10px;top:11px;width:9px;height:9px;border-radius:50%}.src.blue i{background:var(--blue)}.src.green i{background:var(--green)}.src.purple i{background:var(--purple)}.src.red i{background:var(--red)}
+.claim{height:74px;border:1px solid var(--blue);background:var(--navy);border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.claim b{font-size:15px}.claim span{font-size:9px;color:var(--blue);font-weight:800;margin-top:3px}
+.links{position:absolute;inset:0;pointer-events:none}
+.telemetry{margin-top:14px}.logrow{display:grid;grid-template-columns:78px 70px 1fr 92px;gap:8px;align-items:center;border-top:1px solid var(--line);padding:8px 0;font-size:9px}.state{font-size:8px;font-weight:900}.present{color:var(--green)}.missing{color:var(--red)}
+.footer{margin-top:10px;padding:10px 13px;border:1px solid var(--line);background:var(--panel2);border-radius:9px;font-size:10px;color:var(--muted)}.footer b{color:var(--blue)}
+.evidence-grid{display:grid;grid-template-columns:1fr 1.15fr .85fr;gap:16px;height:calc(100% - 65px)}
+.evidence-panel{height:100%;min-height:0}
+.source-list{margin-top:12px;display:grid;gap:8px}.source-row{padding:10px 12px;border:1px solid var(--line);background:var(--panel2);border-radius:10px;display:grid;grid-template-columns:1fr auto;align-items:center}.source-row b{font-size:11px}.source-row span{display:block;font-size:9px;color:var(--muted);margin-top:2px}.source-status{font-size:9px;font-weight:900}
+.core{height:95px;margin:14px 0;background:var(--navy);border:1px solid var(--blue);border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center}.core b{font-size:18px}.core span{font-size:9px;color:var(--blue);font-weight:850;margin-top:3px}
+.metrics{display:grid;gap:8px}.metric{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px}.metric b{font-size:10px;display:block}.metric span{font-size:9px;color:var(--muted);display:block;margin-top:4px}.metric strong{float:right;font-size:18px}
+.map{height:218px;margin-top:12px;background:var(--panel3);border:1px dashed var(--line);border-radius:10px;position:relative;overflow:hidden}.map svg{z-index:0}.map-node{z-index:1}.map-node{position:absolute;padding:7px 9px;border:1px solid var(--line);background:var(--panel2);border-radius:8px;font-size:9px;font-weight:800}.map-node small{display:block;color:var(--muted);font-weight:500;margin-top:2px}.mn1{left:16px;top:28px}.mn2{left:16px;bottom:28px}.mn3{right:20px;top:28px}.mn4{right:20px;bottom:28px}.map-core{left:50%;top:76px;transform:translateX(-50%);border-color:var(--blue);background:var(--navy);padding:13px 16px;color:var(--text)}/* SVG connectors replace manual CSS lines for reliable alignment */
+.status-box{margin-top:12px;padding:13px;background:var(--amberSoft);border:1px solid #6b511e;border-radius:10px}.status-box b{color:var(--amber);font-size:11px}.status-box p{font-size:10px;line-height:1.4;color:var(--muted);margin:7px 0 0}
+.evidence-bottom{display:flex;gap:10px;align-items:center;margin-top:12px}.evidence-bottom .guide{flex:1}
+.matrix{height:52%;min-height:0}.matrix-head,.matrix-row{display:grid;grid-template-columns:1.45fr 1fr 1fr .72fr;gap:7px;align-items:center}.matrix-head{font-size:9px;color:var(--faint);font-weight:850;padding:11px 0}.matrix-row{font-size:10px;border-top:1px solid var(--line);padding:9px 0}.cell{height:28px;display:flex;align-items:center;justify-content:center;border-radius:7px;font-weight:900}.support{background:var(--greenSoft);color:var(--green)}.contradict{background:var(--redSoft);color:var(--red)}.unknown{background:#1b2531;color:var(--muted)}
+.legend{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.legend span{font-size:9px;color:var(--muted)}.legend b{padding:3px 6px;border-radius:5px;margin-right:3px}
+.hcards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}.hcard{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px}.hcard .tag{font-size:9px;color:var(--muted);font-weight:800}.hcard h3{font-size:14px;margin:4px 0 5px}.hcard p{font-size:10px;line-height:1.4;color:var(--muted);margin:0}
+.conclusion{margin-top:14px;padding:15px 17px;border-radius:13px;background:linear-gradient(90deg,#2a2413,#1b2028);border:1px solid #6d5922;display:flex;align-items:center;gap:16px}.conclusion .badge{width:46px;height:46px;border-radius:12px;background:var(--amber);color:#171106;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:18px}.conclusion b{font-size:15px}.conclusion span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.next-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;height:calc(100% - 65px)}.recommendations{height:100%}.rec{display:grid;grid-template-columns:42px 1fr 115px;gap:10px;align-items:center;padding:13px 0;border-top:1px solid var(--line)}.rec:first-of-type{border-top:0;margin-top:4px}.rec-num{font-size:18px;font-weight:950;color:var(--purple)}.rec b{font-size:12px}.rec p{font-size:9px;color:var(--muted);margin:4px 0 0}.rank{text-align:right;font-size:9px;font-weight:900}.chart{display:grid;gap:18px;margin-top:18px}.bar-row{display:grid;grid-template-columns:105px 1fr 38px;gap:8px;align-items:center;font-size:9px}.track{height:9px;border-radius:9px;background:#253140;overflow:hidden}.fill{height:100%;border-radius:9px}.final{margin-top:20px;padding:16px;background:var(--greenSoft);border:1px solid #245d3d;border-radius:12px}.final b{font-size:12px;color:var(--green)}.final p{font-size:10px;color:var(--muted);line-height:1.45;margin:6px 0 0}
+.actions{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding-top:10px;background:linear-gradient(to bottom,rgba(11,16,23,0),var(--bg) 28%)}.action-left,.action-right{display:flex;align-items:center;gap:10px}.back,.nextbtn{border:1px solid var(--line);padding:10px 16px;border-radius:9px;font-weight:850;cursor:pointer;font-size:11px}.back{background:var(--panel);color:var(--text)}.nextbtn{border-color:#2f8a57;background:var(--green);color:#07140d;box-shadow:0 0 0 1px rgba(75,221,136,.12)}.back.disabled{opacity:.38;cursor:default}.step{font-size:9px;color:var(--faint);font-weight:800;letter-spacing:.5px}
+.hidden{display:none}
+@media(max-width:1050px){
+  .app{grid-template-columns:1fr}.app aside{display:none}header{grid-column:1}nav{margin-left:15px}.search{display:none}main{padding:18px}.grid2,.evidence-grid,.next-grid,.hcards{grid-template-columns:1fr}.evidence-grid,.next-grid{height:auto;overflow:auto}.map{height:180px}.landscape{height:160px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <span class="mark">◇</span><span class="logo">TRUSTRAIL</span>
+  <nav>
+    <button data-view="incident" class="active">Investigations</button>
+    <button data-view="evidence">Evidence</button>
+    <button data-view="hypotheses">Hypotheses</button>
+    <button data-view="next">Next Steps</button>
+  </nav>
+  <input class="search" placeholder="Search investigations...">
+</header>
+<aside>
+  <div class="side">⌂ &nbsp; Overview</div><div class="side active">◉ &nbsp; Investigations</div>
+  <div class="side">▥ &nbsp; Evidence</div><div class="side">◇ &nbsp; Hypotheses</div><div class="side">→ &nbsp; Next Steps</div>
+</aside>
+<main>
+
+<section id="incident">
+  <div class="kicker">INCIDENT TR-2026-014</div>
+  <h1>Suspicious privileged login</h1>
+  <div class="sub">An alert is a claim. TRUSTRAIL checks what supports it.</div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3 style="color:var(--red)">Alert claim</h3><div class="small">What the existing security tools reported</div>
+      <div class="pills"><span class="pill red">HIGH</span><span class="pill purple">UNUSUAL LOCATION</span><span class="pill blue">PRIVILEGED ACCESS</span></div>
+      <div class="call">Privileged account login from an unusual location, followed by sensitive cloud access.</div>
+      <div class="small" style="margin-top:12px">Claim to validate</div>
+      <div style="margin-top:4px;font-weight:800;font-size:12px">“Was this privileged activity actually suspicious?”</div>
+      <button class="cta" onclick="show('evidence')">Review the evidence →</button><span class="guide">← CLICK HERE</span>
+    </div>
+
+    <div class="panel">
+      <h3>Evidence landscape</h3><div class="small">Signals available behind the alert</div>
+      <div class="landscape">
+        <div class="src blue"><b>IAM</b><span>Auth logs · 12 events</span><i></i></div>
+        <div class="claim"><b>TRUSTRAIL</b><span>CLAIM CHECKPOINT</span></div>
+        <div class="src green"><b>VPN</b><span>Connection logs · 8 events</span><i></i></div>
+        <div></div>
+        <div class="src purple"><b>Cloud</b><span>Audit logs · 3/8 expected</span><i></i></div>
+        <div class="src red"><b>Endpoint</b><span>Process logs · MISSING</span><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel telemetry">
+    <h3>Telemetry snapshot</h3><div class="small">Representative events feeding the investigation</div>
+    <div class="logrow"><b>14:22:03</b><b>IAM</b><span>login.success · user=adm01 · geo=SG</span><span class="state present">PRESENT</span></div>
+    <div class="logrow"><b>14:22:07</b><b>VPN</b><span>auth.accepted · user=adm01</span><span class="state present">PRESENT</span></div>
+    <div class="logrow"><b>14:24:19</b><b>CLOUD</b><span>resource.access · admin-role</span><span class="state present">PRESENT</span></div>
+    <div class="logrow"><b>14:26:41</b><b>ENDPOINT</b><span>process.exec · no record received</span><span class="state missing">MISSING</span></div>
+  </div>
+  <div class="actions">
+  <div class="action-left"><button class="back disabled" aria-disabled="true">← Back</button></div>
+  <div class="step">1 / 4</div>
+  <div class="action-right"><span class="guide">CLICK HERE → Start the evidence check</span><button class="nextbtn" onclick="show('evidence')">Next: Evidence →</button></div>
+</div>
+<div class="footer"><b>TRUSTRAIL</b> examines the evidence behind the alert before it becomes a conclusion.</div>
+</section>
+
+<section id="evidence" class="hidden">
+  <div class="kicker">EVIDENCE CHECKPOINT</div><h1>What actually arrived?</h1>
+  <div class="sub">Coverage · independence · degradation — before any conclusion.</div>
+  <div class="evidence-grid">
+    <div class="panel evidence-panel">
+      <h3>Evidence sources</h3><div class="small">Expected vs observed</div>
+      <div class="source-list">
+        <div class="source-row"><div><b>IAM</b><span>12 events</span></div><div class="source-status present">AVAILABLE</div></div>
+        <div class="source-row"><div><b>VPN</b><span>8 events</span></div><div class="source-status present">AVAILABLE</div></div>
+        <div class="source-row"><div><b>Cloud</b><span>3 / 8 expected</span></div><div class="source-status" style="color:var(--amber)">PARTIAL</div></div>
+        <div class="source-row"><div><b>Endpoint</b><span>0 / 6 expected</span></div><div class="source-status missing">MISSING</div></div>
+        <div class="source-row"><div><b>DNS</b><span>Not collected</span></div><div class="source-status muted">GAP</div></div>
+      </div>
+    </div>
+
+    <div class="panel evidence-panel">
+      <h3>TRUSTRAIL</h3><div class="small">Three checks before interpretation</div>
+      <div class="core"><b>Evidence Checkpoint</b><span>TRUSTRAIL</span></div>
+      <div class="metrics">
+        <div class="metric"><strong style="color:var(--amber)">60%</strong><b>COVERAGE</b><span>Expected evidence observed</span></div>
+        <div class="metric"><strong style="color:var(--green)">3</strong><b>INDEPENDENCE</b><span>Independent evidence paths</span></div>
+        <div class="metric"><strong style="color:var(--blue)">—</strong><b>DEGRADATION</b><span>No collector outage detected</span></div>
+      </div>
+    </div>
+
+    <div class="panel evidence-panel">
+      <h3>Independence map</h3><div class="small">More sources ≠ more independent sources</div>
+      <div class="map">
+        <div class="map-node mn1">IAM<small>Collector A</small></div>
+        <div class="map-node mn2">VPN<small>Collector A</small></div>
+        <div class="map-node mn3">Cloud<small>Collector B</small></div>
+        <div class="map-node mn4">Endpoint<small>Independent</small></div>
+        <div class="map-node map-core">TRUSTRAIL</div>
+        <div class="conn c1"></div><div class="conn c2"></div><div class="conn c3"></div><div class="conn c4"></div>
+      </div>
+      <div class="status-box"><b>SUPPORTED — INCOMPLETE</b><p>Suspicious activity is supported, but key evidence is missing.</p></div>
+    </div>
+  </div>
+  <div class="actions">
+  <div class="action-left"><button class="back" onclick="show('incident')">← Back</button></div>
+  <div class="step">2 / 4</div>
+  <div class="action-right"><span class="guide">CLICK HERE → Continue to hypotheses</span><button class="nextbtn" onclick="show('hypotheses')">Next: Hypotheses →</button></div>
+</div>
+</section>
+
+<section id="hypotheses" class="hidden">
+  <div class="kicker">HYPOTHESIS ANALYSIS</div><h1>What does the evidence support?</h1>
+  <div class="sub">TRUSTRAIL keeps competing explanations visible while evidence is incomplete.</div>
+
+  <div class="panel matrix">
+    <h3>Evidence matrix</h3>
+    <div class="small">Each row is evaluated against both explanations.</div>
+    <div class="legend">
+      <span><b class="support">SUPPORTS</b> evidence favors the explanation</span>
+      <span><b class="contradict">CONTRADICTS</b> evidence pushes against it</span>
+      <span><b class="unknown">MISSING</b> evidence is unavailable / neutral</span>
+    </div>
+    <div class="matrix-head"><span>EVIDENCE</span><span>H1 · COMPROMISED ACCOUNT</span><span>H2 · LEGITIMATE ACTIVITY</span><span>STATE</span></div>
+    <div class="matrix-row"><span>Unusual location (IAM)</span><span class="cell support">SUPPORTS</span><span class="cell contradict">CONTRADICTS</span><span>Observed</span></div>
+    <div class="matrix-row"><span>Sensitive cloud access</span><span class="cell support">SUPPORTS</span><span class="cell unknown">NEUTRAL</span><span>Observed</span></div>
+    <div class="matrix-row"><span>Valid credentials</span><span class="cell unknown">NEUTRAL</span><span class="cell support">SUPPORTS</span><span>Observed</span></div>
+    <div class="matrix-row"><span>Endpoint process logs</span><span class="cell unknown">MISSING</span><span class="cell unknown">MISSING</span><span class="missing">Missing</span></div>
+    <div class="matrix-row"><span>MFA authentication</span><span class="cell unknown">MISSING</span><span class="cell unknown">MISSING</span><span class="missing">Missing</span></div>
+    <div class="matrix-row"><span>Change-management record</span><span class="cell unknown">MISSING</span><span class="cell contradict">CONTRADICTS</span><span class="missing">Missing</span></div>
+  </div>
+
+  <div class="hcards">
+    <div class="hcard">
+      <div class="tag">H1</div><h3>Compromised privileged account</h3>
+      <div class="pills"><span class="pill amber">SUPPORTED — INCOMPLETE</span></div>
+      <p>Strong signals exist, but endpoint and MFA evidence are still missing.</p>
+    </div>
+    <div class="hcard">
+      <div class="tag">H2</div><h3>Legitimate administrator activity</h3>
+      <div class="pills"><span class="pill blue">POSSIBLE</span></div>
+      <p>Valid credentials support legitimacy, while unusual location and missing records leave uncertainty.</p>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <div class="badge">→</div>
+    <div><b>Current evidence leans toward H1 — but the gap is still material.</b><span>TRUSTRAIL does not force a verdict. It makes the uncertainty visible before the analyst decides.</span></div>
+  </div>
+
+  <div class="actions">
+  <div class="action-left"><button class="back" onclick="show('evidence')">← Back</button></div>
+  <div class="step">3 / 4</div>
+  <div class="action-right"><span class="guide">CLICK HERE → Find the highest-value next evidence</span><button class="nextbtn" onclick="show('next')">Next: Best Evidence →</button></div>
+</div>
+</section>
+
+<section id="next" class="hidden">
+  <div class="kicker">NEXT BEST EVIDENCE</div><h1>What should we check next?</h1>
+  <div class="sub">Not “more data” — the next evidence that can reduce uncertainty.</div>
+  <div class="next-grid">
+    <div class="panel recommendations">
+      <h3>Evidence with highest diagnostic value</h3><div class="small">Ranked for the open hypotheses</div>
+      <div class="rec"><div class="rec-num">01</div><div><b>Endpoint process logs</b><p>Can confirm or refute compromise on the affected host.</p></div><div class="rank" style="color:var(--purple)">HIGHEST</div></div>
+      <div class="rec"><div class="rec-num" style="color:var(--blue)">02</div><div><b>MFA authentication record</b><p>Clarifies whether the privileged login was legitimately authenticated.</p></div><div class="rank" style="color:var(--blue)">HIGH</div></div>
+      <div class="rec"><div class="rec-num" style="color:var(--teal)">03</div><div><b>DNS activity</b><p>May support or contradict the current hypotheses.</p></div><div class="rank" style="color:var(--teal)">MEDIUM</div></div>
+      <div class="final"><b>TRUSTRAIL surfaces the picture.</b><p>The analyst makes the final call after the next evidence is reviewed.</p></div>
+    </div>
+    <div class="panel">
+      <h3>Diagnostic value</h3><div class="small">Why these next?</div>
+      <div class="chart">
+        <div class="bar-row"><span>Endpoint logs</span><div class="track"><div class="fill" style="width:88%;background:var(--purple)"></div></div><b>88%</b></div>
+        <div class="bar-row"><span>MFA record</span><div class="track"><div class="fill" style="width:72%;background:var(--blue)"></div></div><b>72%</b></div>
+        <div class="bar-row"><span>DNS activity</span><div class="track"><div class="fill" style="width:54%;background:var(--teal)"></div></div><b>54%</b></div>
+      </div>
+      <div class="footer" style="margin-top:26px"><b>Decision boundary</b><br>TRUSTRAIL recommends what to investigate next; it does not replace the analyst's decision.</div>
+    </div>
+  </div>
+  <div class="actions">
+  <div class="action-left"><button class="back" onclick="show('hypotheses')">← Back</button></div>
+  <div class="step">4 / 4</div>
+  <div class="action-right"><span class="guide">CLICK HERE → Restart the experience</span><button class="nextbtn" onclick="show('incident')">Restart →</button></div>
+</div>
+</section>
+
+</main>
+</div>
+<script>
+function show(id){
+  document.querySelectorAll('main section').forEach(s=>s.classList.toggle('hidden',s.id!==id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
+</script>
+
+
+</body></html>
